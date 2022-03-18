@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './ExpenseForm.css';
-import React, { useState } from 'react';
 
 const ExpenseForm = (props) => {
     const [title, setEnterdTitle] = useState('');
@@ -31,19 +30,6 @@ const ExpenseForm = (props) => {
         setEnterdDate('');
 
     }
-    const amountChangeHandler = (event) => {
-        setAmount(event.target.value);
-    }
-
-    const dateChangeHandler = (event) => {
-        setdate(event.target.value);
-    }
-    const formData = {
-        title: titlle,
-        amount: amount,
-        date: date
-    };
-    console.log(formData);
     return (
         <form onSubmit={submitHandler}>
             <div className='new-expense__controls'>

@@ -1,10 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-<<<<<<< HEAD
-=======
-import React, {useState} from 'react';
 import ExpenseItems from './components/Expenses/ExpenseItems';
->>>>>>> 440f07297db991129df10930e16430409193be4a
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
@@ -64,7 +60,7 @@ const App = () => {
   return (
     <div className='back'>
       <NewExpense onAddExpense = {addExpenseHandler}/>
-      <ExpenseItems title={expenses} />
+      <Expenses expense = {expenses}/>
     </div>
   );
 }
