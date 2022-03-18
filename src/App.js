@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
 import ExpenseItems from './components/Expenses/ExpenseItems';
 import NewExpense from './components/NewExpense/NewExpense';
 
@@ -25,7 +26,7 @@ import NewExpense from './components/NewExpense/NewExpense';
 // }
 
 const App = () => {
-  const expense = [
+  const expenses = [
     {
       id: 'e1',
       title : 'Toilet paper',
@@ -52,13 +53,17 @@ const App = () => {
     }
 
   ];
+  const addExpenseHandler = expense => {
+    expenses.push(expense);
+    console.log(expenses);
+  }
   return (
     <div className='back'>
-      <NewExpense />
-      <ExpenseItems title={expense[0].title} date = {expense[0].date} amount={expense[0].amount}></ExpenseItems>
-      <ExpenseItems title={expense[1].title} date = {expense[1].date} amount={expense[1].amount}></ExpenseItems>
-      <ExpenseItems title={expense[2].title} date = {expense[2].date} amount={expense[2].amount}></ExpenseItems>
-      <ExpenseItems title={expense[3].title} date = {expense[3].date} amount={expense[3].amount}></ExpenseItems>
+      <NewExpense onAddExpense = {addExpenseHandler}/>
+      <ExpenseItems title={expenses[0].title} date = {expenses[0].date} amount={expenses[0].amount}></ExpenseItems>
+      <ExpenseItems title={expenses[1].title} date = {expenses[1].date} amount={expenses[1].amount}></ExpenseItems>
+      <ExpenseItems title={expenses[2].title} date = {expenses[2].date} amount={expenses[2].amount}></ExpenseItems>
+      <ExpenseItems title={expenses[3].title} date = {expenses[3].date} amount={expenses[3].amount}></ExpenseItems>
     </div>
   );
 }
